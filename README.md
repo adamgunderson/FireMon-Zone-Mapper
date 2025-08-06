@@ -1,6 +1,6 @@
 # FireMon Zone Mapper
 
-This script maps firewall zones (shown as zoneDisplays on interfaces) to FireMon compliance zones. Designed to run directly on FireMon appliances.
+This script maps firewall zones to FireMon compliance zones. Designed to run directly on FireMon appliances.
 
 ## Features
 
@@ -108,10 +108,10 @@ $env:FIREMON_PASSWORD = "your_secure_password"
 $env:FIREMON_DOMAIN_ID = "1"
 
 # Run the script - credentials will be picked up from environment
-python firemon_zone_mapper.py --auto-create
+python3 firemon_zone_mapper.py --auto-create
 
 # You can still override environment variables with command-line arguments
-python firemon_zone_mapper.py --username different_user --auto-create
+python3 firemon_zone_mapper.py --username different_user --auto-create
 ```
 
 ### Secure Automation Examples
@@ -126,26 +126,26 @@ EOF
 
 # Load variables and run
 export $(cat .env | xargs)
-python firemon_zone_mapper.py --auto-create
+python3 firemon_zone_mapper.py --auto-create
 
 # Example 2: Using a secure credential store (like HashiCorp Vault)
 export FIREMON_PASSWORD=$(vault kv get -field=password secret/firemon)
-python firemon_zone_mapper.py --username admin --auto-create
+python3 firemon_zone_mapper.py --username admin --auto-create
 
 # Example 3: In a CI/CD pipeline (like Jenkins)
 # Set credentials as secret environment variables in your pipeline
-python firemon_zone_mapper.py --mappings zone_mappings.json --auto-create
+python3 firemon_zone_mapper.py --mappings zone_mappings.json --auto-create
 
 # Example 4: Using a bash script wrapper
 #!/bin/bash
 # Read password securely
 read -s -p "Enter FireMon password: " FIREMON_PASSWORD
 export FIREMON_PASSWORD
-python firemon_zone_mapper.py --username admin --auto-create
+python3 firemon_zone_mapper.py --username admin --auto-create
 
 # Example 5: Rename-only mode in automation
 export FIREMON_PASSWORD=$(vault kv get -field=password secret/firemon)
-python firemon_zone_mapper.py --username admin --rename-only
+python3 firemon_zone_mapper.py --username admin --rename-only
 ```
 
 ### Command-Line Options
@@ -232,7 +232,7 @@ The script includes comprehensive error handling for:
 - Network segments can only be assigned to one compliance zone
 - If a network segment has interfaces in multiple firewall zones that map to different compliance zones, the first mapping is used (with a warning)
 - The script only updates network segments that need changes (idempotent operation)
-- Cloud-only network segments (those only associated with cloud device interfaces) are skipped
+- Cloud-only network segments (those only associated with cloud device interfaces) are skipped.
 - Existing zone assignments are preserved unless they need to be changed
 
 ## Security Considerations
@@ -241,7 +241,6 @@ The script includes comprehensive error handling for:
 - Passwords are masked when entered interactively
 - **Best Practice**: Use environment variables for credentials instead of command-line arguments
 - Avoid passing passwords via command line in production environments (visible in process lists)
-- Consider using secure credential stores (HashiCorp Vault, AWS Secrets Manager, etc.) for production
 - Set appropriate file permissions on any .env files containing credentials (chmod 600)
 - Clear environment variables after use in shared environments:
   ```bash

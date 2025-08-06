@@ -5,7 +5,7 @@
 Just run the script and follow the prompts:
 
 ```bash
-python firemon_zone_mapper.py
+python3 firemon_zone_mapper.py
 ```
 
 ## 2. Command Line Mode (For Automation)
@@ -29,7 +29,7 @@ chmod 600 .env
 ```bash
 # Linux/Mac
 export $(cat .env | xargs)
-python firemon_zone_mapper.py --auto-create
+python3 firemon_zone_mapper.py --auto-create
 
 # Or use the secure wrapper
 ./secure_wrapper.sh --auto-create
@@ -39,13 +39,13 @@ python firemon_zone_mapper.py --auto-create
 
 ```bash
 # Auto-create all zones
-python firemon_zone_mapper.py --host localhost --username admin --auto-create
+python3 firemon_zone_mapper.py --host localhost --username admin --auto-create
 
 # Use zone mappings file
-python firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json
+python3 firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json
 
 # Combined (recommended)
-python firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json --auto-create
+python3 firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json --auto-create
 ```
 
 ## 3. Zone Mappings File
@@ -73,19 +73,19 @@ Create a `zone_mappings.json` file to map firewall zones to compliance zones:
 ### Map Everything Automatically
 ```bash
 export FIREMON_PASSWORD="your_password"
-python firemon_zone_mapper.py --username admin --auto-create
+python3 firemon_zone_mapper.py --username admin --auto-create
 ```
 
 ### Use Predefined Mappings + Auto-create Unknown Zones
 ```bash
 export FIREMON_PASSWORD="your_password"
-python firemon_zone_mapper.py --username admin --mappings zone_mappings.json --auto-create
+python3 firemon_zone_mapper.py --username admin --mappings zone_mappings.json --auto-create
 ```
 
 ### Just Rename Segments (No Zone Assignment)
 ```bash
 export FIREMON_PASSWORD="your_password"
-python firemon_zone_mapper.py --username admin --rename-only
+python3 firemon_zone_mapper.py --username admin --rename-only
 ```
 This will rename segments like:
 - `10.0.0.0/24` → `10.0.0.0/24 [Internal_1]`
@@ -93,7 +93,7 @@ This will rename segments like:
 
 ### Debug Mode
 ```bash
-python firemon_zone_mapper.py --username admin --auto-create --debug
+python3 firemon_zone_mapper.py --username admin --auto-create --debug
 ```
 
 ## 5. Security Best Practices
