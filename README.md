@@ -51,6 +51,8 @@ Simply run the script without any arguments for interactive prompts:
 ```bash
 python firemon_zone_mapper.py
 ```
+<img width="1252" height="707" alt="image" src="https://github.com/user-attachments/assets/5a7113f8-1e06-4e2f-9d83-1f13a3f92205" />
+
 
 The script will ask for:
 - FireMon server IP/FQDN (default: localhost)
@@ -186,6 +188,8 @@ python3 firemon_zone_mapper.py --username admin --rename-only
    - Instead of assigning zones, renames network segments to include zone names
    - Example: `10.0.0.0/24` becomes `10.0.0.0/24 [Internal_1]`
    - Useful for visual identification without changing compliance zone assignments
+     <img width="1920" height="963" alt="image" src="https://github.com/user-attachments/assets/18b3925a-1d0c-4b46-a4ce-ba1d903408bc" />
+
 
 ## Zone Mappings File Format
 
