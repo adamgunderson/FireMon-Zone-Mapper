@@ -1,0 +1,15 @@
+{
+  "Outside_1": "External",
+  "Outside_2": "External",
+  "Outside_3": "External",
+  "Internal_1": "Internal",
+  "Internal_2": "Internal",
+  "Data_Label": "Internal",
+  "trust": "Internal",
+  "untrust": "External",
+  "DMZ": "DMZ",
+  "Guest": "Partner",
+  "Management": "Internal",
+  "INET1_Label": "External",
+  "INET2_Label": "External"
+}
