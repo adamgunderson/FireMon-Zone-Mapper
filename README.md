@@ -49,7 +49,7 @@ The script supports the following environment variables for credentials and conf
 Simply run the script without any arguments for interactive prompts:
 
 ```bash
-python firemon_zone_mapper.py
+python3 firemon_zone_mapper.py
 ```
 <img width="1252" height="707" alt="image" src="https://github.com/user-attachments/assets/5a7113f8-1e06-4e2f-9d83-1f13a3f92205" />
 
