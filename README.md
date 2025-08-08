@@ -5,9 +5,6 @@ This script maps firewall zones to FireMon compliance zones. Designed to run dir
 ## Features
 
 - **Dual Mode Operation**: Runs interactively when no arguments provided, or accepts command-line arguments for automation
-- **Smart Zone Selection**: 
-  - Excludes cloud device interfaces to avoid non-firewall zone names
-  - Uses the last zone from `zoneDisplays` when multiple zones exist (typically the most specific zone)
 - **Two Operation Modes**:
   - **Zone Assignment**: Maps firewall zones to compliance zones and assigns network segments
   - **Rename Only**: Just renames network segments to include zone names (e.g., `10.0.0.0/24 [Internal_1]`)
