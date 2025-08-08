@@ -71,19 +71,19 @@ For automated/scripted usage, provide command-line arguments:
 
 ```bash
 # With manual mappings file
-python firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json
+python3 firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json
 
 # With auto-create enabled
-python firemon_zone_mapper.py --host localhost --username admin --auto-create
+python3 firemon_zone_mapper.py --host localhost --username admin --auto-create
 
 # Combined mode (recommended)
-python firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json --auto-create
+python3 firemon_zone_mapper.py --host localhost --username admin --mappings zone_mappings.json --auto-create
 
 # Rename segments only (no zone assignment)
-python firemon_zone_mapper.py --host localhost --username admin --rename-only
+python3 firemon_zone_mapper.py --host localhost --username admin --rename-only
 
 # With password on command line (not recommended for security)
-python firemon_zone_mapper.py --host localhost --username admin --password mypass --auto-create
+python3 firemon_zone_mapper.py --host localhost --username admin --password mypass --auto-create
 ```
 
 ### Using Environment Variables
